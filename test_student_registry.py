@@ -37,4 +37,9 @@ def test_invalid_grade_setter():
     student.set_grade = "13th"
     assert student.get_grade == "12th"
 
-# Write tests for Class methods
+def test_advanced():
+    student = Student("jimmy", 15, "10th")
+    student.advance(2)
+    assert student.get_grade == "12th" #get_grade() was calling a getter, which is not a function.
+    # assert student.get_grade() == "12th"
+
